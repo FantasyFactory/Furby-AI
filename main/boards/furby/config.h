@@ -1,0 +1,55 @@
+#ifndef _BOARD_CONFIG_H_
+#define _BOARD_CONFIG_H_
+
+#include <driver/gpio.h>
+
+#define BOOT_BUTTON_GPIO        GPIO_NUM_9
+#define OTHER_BUTTON_GPIO       GPIO_NUM_7
+
+#define CODEC_TX_GPIO           GPIO_NUM_10
+#define CODEC_RX_GPIO           GPIO_NUM_18
+
+//#define CONFIG_OLED_SSD1315_72X40 
+#define CONFIG_OLED_SSD1306_128X64
+//#define CONFIG_OLED_SSD1306_72x40
+
+//#define DISPLAY_BACKLIGHT_PIN GPIO_NUM_4
+//#define DISPLAY_MOSI_PIN      GPIO_NUM_1
+//#define DISPLAY_CLK_PIN       GPIO_NUM_0
+//#define DISPLAY_DC_PIN        GPIO_NUM_3
+//#define DISPLAY_RST_PIN       GPIO_NUM_2
+//#define DISPLAY_CS_PIN        GPIO_NUM_NC
+#define DISPLAY_SDA_PIN GPIO_NUM_5
+#define DISPLAY_SCL_PIN GPIO_NUM_6
+
+#ifdef CONFIG_OLED_SSD1315_72X40 
+#define SSD1315_CONTROLLER
+#define DISPLAY_WIDTH   72
+#define DISPLAY_HEIGHT  40
+#define DISPLAY_OFFSET_X  0
+#define DISPLAY_OFFSET_Y  0
+#define DISPLAY_MIRROR_X true
+#define DISPLAY_MIRROR_Y true
+#endif
+
+#ifdef CONFIG_OLED_SSD1306_128X64
+#define SSD1306_CONTROLLER
+#define DISPLAY_WIDTH   128
+#define DISPLAY_HEIGHT  64
+#define DISPLAY_OFFSET_X  0
+#define DISPLAY_OFFSET_Y  0
+#define DISPLAY_MIRROR_X true
+#define DISPLAY_MIRROR_Y true
+#endif
+
+#ifdef CONFIG_OLED_SSD1306_72x40
+#define SSD1306_CONTROLLER
+#define DISPLAY_WIDTH   72
+#define DISPLAY_HEIGHT  40
+#define DISPLAY_OFFSET_X  0
+#define DISPLAY_OFFSET_Y  0
+#define DISPLAY_MIRROR_X true
+#define DISPLAY_MIRROR_Y true
+#endif
+
+#endif // _BOARD_CONFIG_H_
